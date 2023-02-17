@@ -1,7 +1,21 @@
-public class file
-{
- public static void main(String[] args)
- {
-   System.out.println("Hello webhook");
- }
+pipeline {
+    agent any
+    stages {
+        stage('Preparation') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "Building Project"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Running tests"
+            }
+        }
+    }
 }
+
